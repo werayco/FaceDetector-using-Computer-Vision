@@ -6,7 +6,7 @@ import matplotlib.pyplot as plt
 
 faceRec=cv.face.LBPHFaceRecognizer.create()
 
-direc=r"C:\Users\LENOVO-PC\Downloads\Images\IMAGG"
+direc="IMAGG"
 
 models= os.listdir(direc)
 
