@@ -7,7 +7,7 @@ direc=r"C:\Users\LENOVO-PC\Downloads\Images\IMAGG"
 
 face_dect = cv.CascadeClassifier("TheFace.xml")  # instantiating the haar algo
 
-models= ["Ayra","Blessing","Bruno","Kelvin"]
+models= os.listdir(direc)
 
 features =[]
 
@@ -31,7 +31,7 @@ def FaceDetect():
             
             gray = cv.cvtColor(img_arr,cv.COLOR_BGR2GRAY)
 
-            faces_recg = face_dect.detectMultiScale(gray,scaleFactor=1.1,minNeighbors=4)
+            faces_recg = face_dect.detectMultiScale(gray,scaleFactor=1.1,minNeighbors=3)
 
             for (x,y,w,h) in faces_recg:
 
@@ -51,7 +51,7 @@ face_rec = cv.face.LBPHFaceRecognizer.create()
 
 face_rec.train(feat,labelss)
 
-face_rec.save("FaceRec.yml")
+face_rec.save("TrainedRecg.yml")
 
 np.save("features.npy",feat)
 
