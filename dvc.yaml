@@ -1,0 +1,17 @@
+stages:
+  FaceDect:
+    cmd: python FaceDect.py
+    deps:
+    - FaceDect.py
+    - IMAGG
+    - TheFace.xml
+    outs:
+    - features.npy
+    - label.npy
+    - TrainedRecg.yml
+
+  FaceRecg:
+    cmd: python FaceRecg.py
+    deps:
+    - TrainedRecg.yml
+    - FaceRecg.py
