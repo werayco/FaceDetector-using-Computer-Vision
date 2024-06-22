@@ -3,7 +3,7 @@ import numpy as np
 import os
 
 
-direc=r"C:\Users\LENOVO-PC\Downloads\Images\IMAGG"
+direc="IMAGG"
 
 face_dect = cv.CascadeClassifier("TheFace.xml")  # instantiating the haar algo
 
