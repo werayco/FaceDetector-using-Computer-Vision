@@ -20,16 +20,6 @@ jobs:
           python -m pip install --upgrade pip
           pip install dvc[gs]
 
-
-      - name: Configure existing DVC remote for Google Drive
-        run: dvc remote modify myremote gdrive_service_account_json_file_path gdrive_creds.json
-
-      - name: Pull DVC data
-        run: dvc pull
-
-      - name: List image files
-        run: ls IMAGG.dvc
-
       - name: Install dependencies and run DVC pipeline
         run: |
           pip install -r requirements.txt
